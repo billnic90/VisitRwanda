@@ -1,0 +1,30 @@
+﻿@model IEnumerable<VisitRwanda.Models.Investment>
+
+@{
+    ViewData["Title"] = "Investment Opportunities in Rwanda";
+}
+
+<h2 class="mt-4 mb-4 text-center">Investment Opportunities in Rwanda</h2>
+
+<p class="text-center mb-5">
+    Rwanda has an excellent investment climate, a robust and pro‑business government, a fast growing economy and access to markets across East Africa. It also offers an array of incentives for investors ready to invest in the country, in a wide range of sectors.
+</p>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="~/images/@item.Image"
+                     class="card-img-top"
+                     style="height: 250px; object-fit: cover;"
+                     alt="@item.Sector" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.Sector</h5>
+                    <p class="card-text">@item.Description</p>
+                    <p class="text-muted"><small>@item.Requirements</small></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
